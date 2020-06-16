@@ -6,7 +6,12 @@ public class MarsRover {
 
     public MarsRoverPosition receiveCommands(String commands) {
         if(commands.equals("M")) {
-            marsRoverPosition.setCoordinateY(marsRoverPosition.getCoordinateY()+1);
+            if(marsRoverPosition.direction.equals("N")) {
+                marsRoverPosition.setCoordinateY(marsRoverPosition.getCoordinateY()+1);
+            }
+            if(marsRoverPosition.direction.equals("S")) {
+                marsRoverPosition.setCoordinateY(marsRoverPosition.getCoordinateY()-1);
+            }
         }
         return marsRoverPosition;
     }

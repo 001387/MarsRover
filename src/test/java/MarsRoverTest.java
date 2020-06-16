@@ -19,7 +19,14 @@ public class MarsRoverTest {
 
     @Test
     public void should_return_0_negative_1_S_when_given_init_position_0_0_S_and_commands_M() {
-        //TODO
+//      given
+        MarsRover marsRover = new MarsRover(0,0,"S");
+//      when
+        MarsRoverPosition resultPosition = marsRover.receiveCommands("M");
+//      then
+        assertThat(resultPosition.getCoordinateX(),is(0));
+        assertThat(resultPosition.getCoordinateY(),is(-1));
+        assertThat(resultPosition.getDirection(),is("S"));
     }
 
     @Test
@@ -27,7 +34,7 @@ public class MarsRoverTest {
         //TODO
     }
 
-    @Test
+    /*@Test
     public void should_return_negative_1_0_W_when_given_init_position_0_0_W_and_commands_M() {
         //TODO
     }
@@ -75,5 +82,5 @@ public class MarsRoverTest {
     @Test
     public void should_return_negative_1_negative_1_W_when_given_init_position_0_0_W_and_commands_MLMR() {
         //TODO
-    }
+    }*/
 }
