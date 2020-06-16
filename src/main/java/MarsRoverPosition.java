@@ -8,13 +8,15 @@ public class MarsRoverPosition {
         this.direction = direction;
     }
 
-    protected void move(String commands) {
-        if(commands.equals("M")) {
-            moveToward();
-        } else if(commands.equals("R")) {
-            trunRight();
-        } else if(commands.equals("L")) {
-            turnLeft();
+    protected void move(String[] commands) {
+        for (String command:commands) {
+            if(command.equals("M")) {
+                moveToward();
+            } else if(command.equals("R")) {
+                trunRight();
+            } else if(command.equals("L")) {
+                turnLeft();
+            }
         }
     }
 
@@ -25,6 +27,8 @@ public class MarsRoverPosition {
             setDirection("N");
         } else if(direction.equals("S")) {
             setDirection("E");
+        } else if(direction.equals("W")) {
+            setDirection("S");
         }
     }
 

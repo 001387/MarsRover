@@ -149,8 +149,15 @@ public class MarsRoverTest {
         assertThat(resultPosition.getDirection(),is("E"));
     }
 
-    /*@Test
+    @Test
     public void should_return_negative_1_negative_1_W_when_given_init_position_0_0_W_and_commands_MLMR() {
-        //TODO
-    }*/
+//      given
+        MarsRover marsRover = new MarsRover(0,0,"W");
+//      when
+        MarsRoverPosition resultPosition = marsRover.receiveCommands("MLMR");
+//      then
+        assertThat(resultPosition.getCoordinateX(),is(-1));
+        assertThat(resultPosition.getCoordinateY(),is(-1));
+        assertThat(resultPosition.getDirection(),is("W"));
+    }
 }
