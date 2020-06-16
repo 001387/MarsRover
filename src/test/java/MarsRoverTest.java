@@ -4,11 +4,14 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class MarsRoverTest {
-    
+
     @Test
     public void should_return_0_1_N_when_given_init_position_0_0_N_and_commands_M() {
+//      given
         MarsRover marsRover = new MarsRover(0,0,"N");
+//      when
         MarsRoverPosition resultPosition = marsRover.receiveCommands("M");
+//      then
         assertThat(resultPosition.getCoordinateX(),is(0));
         assertThat(resultPosition.getCoordinateY(),is(1));
         assertThat(resultPosition.getDirection(),is("N"));
