@@ -5,7 +5,7 @@ public class MarsRover {
     }
 
     public MarsRoverPosition receiveCommands(String commands) {
-        marsRoverPosition.moveToward(commands);
+        marsRoverPosition.move(commands);
         return marsRoverPosition;
     }
 

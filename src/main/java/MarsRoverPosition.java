@@ -8,18 +8,25 @@ public class MarsRoverPosition {
         this.direction = direction;
     }
 
-    protected void moveToward(String commands) {
-        if(direction.equals("N")) {
-            setCoordinateY(getCoordinateY()+1);
+    protected void move(String commands) {
+        if(commands.equals("M")) {
+            if(direction.equals("N")) {
+                setCoordinateY(getCoordinateY()+1);
+            }
+            if(direction.equals("S")) {
+                setCoordinateY(getCoordinateY()-1);
+            }
+            if(direction.equals("E")) {
+                setCoordinateX(getCoordinateX()+1);
+            }
+            if(direction.equals("W")) {
+                setCoordinateX(getCoordinateX()-1);
+            }
         }
-        if(direction.equals("S")) {
-            setCoordinateY(getCoordinateY()-1);
-        }
-        if(direction.equals("E")) {
-            setCoordinateX(getCoordinateX()+1);
-        }
-        if(direction.equals("W")) {
-            setCoordinateX(getCoordinateX()-1);
+        if(commands.equals("R")) {
+            if(direction.equals("N")) {
+                setDirection("E");
+            }
         }
     }
 
