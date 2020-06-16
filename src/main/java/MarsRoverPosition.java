@@ -25,6 +25,8 @@ public class MarsRoverPosition {
                 setDirection("E");
             } else if(direction.equals("E")) {
                 setDirection("S");
+            } else if(direction.equals("S")) {
+                setDirection("W");
             }
         }
     }
