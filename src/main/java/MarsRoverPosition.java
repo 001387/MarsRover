@@ -10,35 +10,46 @@ public class MarsRoverPosition {
 
     protected void move(String commands) {
         if(commands.equals("M")) {
-            if(direction.equals("N")) {
-                setCoordinateY(getCoordinateY()+1);
-            } else if(direction.equals("S")) {
-                setCoordinateY(getCoordinateY()-1);
-            } else if(direction.equals("E")) {
-                setCoordinateX(getCoordinateX()+1);
-            } else if(direction.equals("W")) {
-                setCoordinateX(getCoordinateX()-1);
-            }
+            moveToward();
         } else if(commands.equals("R")) {
-            if(direction.equals("N")) {
-                setDirection("E");
-            } else if(direction.equals("E")) {
-                setDirection("S");
-            } else if(direction.equals("S")) {
-                setDirection("W");
-            } else if(direction.equals("W")) {
-                setDirection("N");
-            }
+            trunRight();
         } else if(commands.equals("L")) {
-            if(direction.equals("N")) {
-                setDirection("W");
-            } else if(direction.equals("E")) {
-                setDirection("N");
-            } else if(direction.equals("S")) {
-                setDirection("E");
-            }
+            turnLeft();
         }
+    }
 
+    private void turnLeft() {
+        if(direction.equals("N")) {
+            setDirection("W");
+        } else if(direction.equals("E")) {
+            setDirection("N");
+        } else if(direction.equals("S")) {
+            setDirection("E");
+        }
+    }
+
+    private void trunRight() {
+        if(direction.equals("N")) {
+            setDirection("E");
+        } else if(direction.equals("E")) {
+            setDirection("S");
+        } else if(direction.equals("S")) {
+            setDirection("W");
+        } else if(direction.equals("W")) {
+            setDirection("N");
+        }
+    }
+
+    private void moveToward() {
+        if(direction.equals("N")) {
+            setCoordinateY(getCoordinateY()+1);
+        } else if(direction.equals("S")) {
+            setCoordinateY(getCoordinateY()-1);
+        } else if(direction.equals("E")) {
+            setCoordinateX(getCoordinateX()+1);
+        } else if(direction.equals("W")) {
+            setCoordinateX(getCoordinateX()-1);
+        }
     }
 
     public int getCoordinateX() {
