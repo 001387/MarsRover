@@ -12,20 +12,19 @@ public class MarsRoverPosition {
         if(commands.equals("M")) {
             if(direction.equals("N")) {
                 setCoordinateY(getCoordinateY()+1);
-            }
-            if(direction.equals("S")) {
+            } else if(direction.equals("S")) {
                 setCoordinateY(getCoordinateY()-1);
-            }
-            if(direction.equals("E")) {
+            } else if(direction.equals("E")) {
                 setCoordinateX(getCoordinateX()+1);
-            }
-            if(direction.equals("W")) {
+            } else if(direction.equals("W")) {
                 setCoordinateX(getCoordinateX()-1);
             }
         }
         if(commands.equals("R")) {
             if(direction.equals("N")) {
                 setDirection("E");
+            } else if(direction.equals("E")) {
+                setDirection("S");
             }
         }
     }
