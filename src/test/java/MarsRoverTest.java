@@ -31,7 +31,14 @@ public class MarsRoverTest {
 
     @Test
     public void should_return_1_0_E_when_given_init_position_0_0_E_and_commands_M() {
-        //TODO
+//      given
+        MarsRover marsRover = new MarsRover(0,0,"E");
+//      when
+        MarsRoverPosition resultPosition = marsRover.receiveCommands("M");
+//      then
+        assertThat(resultPosition.getCoordinateX(),is(1));
+        assertThat(resultPosition.getCoordinateY(),is(0));
+        assertThat(resultPosition.getDirection(),is("E"));
     }
 
     /*@Test

@@ -12,6 +12,9 @@ public class MarsRover {
             if(marsRoverPosition.direction.equals("S")) {
                 marsRoverPosition.setCoordinateY(marsRoverPosition.getCoordinateY()-1);
             }
+           if(marsRoverPosition.direction.equals("E")) {
+                marsRoverPosition.setCoordinateX(marsRoverPosition.getCoordinateX()+1);
+            }
         }
         return marsRoverPosition;
     }
