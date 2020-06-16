@@ -22,37 +22,37 @@ public class MarsRoverPosition {
 
     private void turnLeft() {
         if(direction.equals("N")) {
-            setDirection("W");
+            direction = "W";
         } else if(direction.equals("E")) {
-            setDirection("N");
+            direction = "N";
         } else if(direction.equals("S")) {
-            setDirection("E");
+            direction = "E";
         } else if(direction.equals("W")) {
-            setDirection("S");
+            direction = "S";
         }
     }
 
     private void trunRight() {
         if(direction.equals("N")) {
-            setDirection("E");
+            direction = "E";
         } else if(direction.equals("E")) {
-            setDirection("S");
+            direction = "S";
         } else if(direction.equals("S")) {
-            setDirection("W");
+            direction = "W";
         } else if(direction.equals("W")) {
-            setDirection("N");
+            direction = "N";
         }
     }
 
     private void moveToward() {
         if(direction.equals("N")) {
-            setCoordinateY(getCoordinateY()+1);
+            coordinateY++;
         } else if(direction.equals("S")) {
-            setCoordinateY(getCoordinateY()-1);
+            coordinateY--;
         } else if(direction.equals("E")) {
-            setCoordinateX(getCoordinateX()+1);
+            coordinateX++;
         } else if(direction.equals("W")) {
-            setCoordinateX(getCoordinateX()-1);
+            coordinateX--;
         }
     }
 
@@ -60,23 +60,11 @@ public class MarsRoverPosition {
         return coordinateX;
     }
 
-    public void setCoordinateX(int coordinateX) {
-        this.coordinateX = coordinateX;
-    }
-
     public int getCoordinateY() {
         return coordinateY;
     }
 
-    public void setCoordinateY(int coordinateY) {
-        this.coordinateY = coordinateY;
-    }
-
     public String getDirection() {
         return direction;
-    }
-
-    public void setDirection(String direction) {
-        this.direction = direction;
     }
 }
