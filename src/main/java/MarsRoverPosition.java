@@ -19,8 +19,7 @@ public class MarsRoverPosition {
             } else if(direction.equals("W")) {
                 setCoordinateX(getCoordinateX()-1);
             }
-        }
-        if(commands.equals("R")) {
+        } else if(commands.equals("R")) {
             if(direction.equals("N")) {
                 setDirection("E");
             } else if(direction.equals("E")) {
@@ -30,7 +29,12 @@ public class MarsRoverPosition {
             } else if(direction.equals("W")) {
                 setDirection("N");
             }
+        } else if(commands.equals("L")) {
+            if(direction.equals("N")) {
+                setDirection("W");
+            }
         }
+
     }
 
     public int getCoordinateX() {
